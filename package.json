@@ -1,0 +1,33 @@
+{
+  "name": "fetch-event-source",
+  "version": "1.0.0",
+  "description": "Implements the EventSource API on top of `fetch()`",
+  "type": "module",
+  "main": "fetch-event-source.js",
+  "standard": {
+    "parser": "@babel/eslint-parser"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RangerMauve/fetch-event-source.git"
+  },
+  "keywords": [
+    "fetch",
+    "eventsource",
+    "event-stream"
+  ],
+  "author": "rangermauve <ranger@mauve.moe> (https://mauve.moe/)",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/RangerMauve/fetch-event-source/issues"
+  },
+  "homepage": "https://github.com/RangerMauve/fetch-event-source#readme",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.15.4",
+    "make-fetch": "^2.3.1",
+    "tape": "^5.3.1"
+  }
+}
