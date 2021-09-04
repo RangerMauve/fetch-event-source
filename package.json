@@ -1,5 +1,5 @@
 {
-  "name": "fetch-event-source",
+  "name": "@rangermauve/fetch-event-source",
   "version": "1.0.0",
   "description": "Implements the EventSource API on top of `fetch()`",
   "type": "module",
