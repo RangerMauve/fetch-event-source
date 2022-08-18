@@ -3,12 +3,26 @@
   "version": "1.0.0",
   "description": "Implements the EventSource API on top of `fetch()`",
   "type": "module",
-  "main": "fetch-event-source.js",
+  "exports": {
+    ".": {
+      "import": "./fetch-event-source.js",
+      "require": "./index.cjs",
+      "default": "./fetch-event-source.js"
+    }
+  },
+  "files": [
+    "./fetch-event-source.js",
+    "./index.cjs",
+    "LICENSE",
+    "README.md"
+  ],
   "standard": {
     "parser": "@babel/eslint-parser"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "build": "rollup --format cjs ./fetch-event-source.js > index.cjs",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -28,6 +42,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.4",
     "make-fetch": "^2.3.1",
+    "rollup": "^2.78.0",
     "tape": "^5.3.1"
   }
 }

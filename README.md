@@ -1,11 +1,19 @@
 # fetch-event-source
 Implements the EventSource API on top of `fetch()`
 
+```
+npm i --save @rangermauve/fetch-event-source
+```
+
 ## API
 
 ```JavaScript
 // Uses EcmaScript modules, load the source from wherever
 import createEventSource from './fetch-event-source.js'
+// Can also import from NPM in node.js
+import createEventSource from '@rangermauve/fetch-event-source'
+// For CJS users, the imports are a bit wonky due to rollup transpiling
+const {default: createEventSource} = require('@rangermauve/fetch-event-source')
 
 // By default it'll use `globalThis.fetch`
 const {EventSource} = createEventSource()
