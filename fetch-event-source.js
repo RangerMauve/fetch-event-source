@@ -73,6 +73,7 @@ export default function createEventSource (
     #currentRequest = null
     #currentReader = null
     #lastEventId = null
+    #decoder = new TextDecoder()
 
     constructor (url, { withCredentials = true } = {}) {
       super()
@@ -144,11 +145,18 @@ export default function createEventSource (
           const { done, value } = await this.#currentReader.read()
 
           if (done) break
-          currentBuffer += value
+
+          if(typeof value !== 'string') {
+            currentBuffer += this.#decoder.decode(value)
+          } else {
+            currentBuffer += value
+          }
 
           if (!currentBuffer.includes('\n')) continue
 
           const lines = currentBuffer.split('\n')
+
+          console.log({lines})
 
           // Get remaining data and put it into the buffer
           currentBuffer = lines.pop()
