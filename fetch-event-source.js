@@ -156,8 +156,6 @@ export default function createEventSource (
 
           const lines = currentBuffer.split('\n')
 
-          console.log({lines})
-
           // Get remaining data and put it into the buffer
           currentBuffer = lines.pop()
 
